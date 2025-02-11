@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Libs.CustomExtensions.GameObjects
+namespace CustomExtensions.GameObjects
 {
     public static class GameObjectExtensions
     {

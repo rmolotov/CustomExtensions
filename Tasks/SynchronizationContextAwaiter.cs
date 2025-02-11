@@ -2,7 +2,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Threading;
 
-namespace Libs.CustomExtensions.Tasks
+namespace CustomExtensions.Tasks
 {
     public class SynchronizationContextAwaiter : INotifyCompletion
     {

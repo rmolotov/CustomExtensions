@@ -2,9 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Libs.CustomExtensions.Collections
+namespace CustomExtensions.Collections
 {
-
     public static class LinqExtensions
     {
         public static T MaxBy<T, R>(this IEnumerable<T> en, Func<T, R> evaluate) where R : IComparable<R> =>

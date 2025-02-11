@@ -1,8 +1,7 @@
 using System;
 
-namespace Libs.CustomExtensions.Functional
+namespace CustomExtensions.Functional
 {
-
     public static class FunctionalExtensions
     {
         public static T With<T>(this T self, Action<T> set)

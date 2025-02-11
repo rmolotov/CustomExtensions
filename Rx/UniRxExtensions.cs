@@ -1,7 +1,7 @@
 using System;
 using UniRx;
 
-namespace Libs.CustomExtensions.Rx
+namespace CustomExtensions.Rx
 {
     public static class UniRxExtensions
     {
