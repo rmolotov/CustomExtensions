@@ -1,32 +1,33 @@
 using System;
 using System.Collections.Generic;
 
-namespace Libs.CustomExtensions;
-
-public static class DictionaryExtensions
+namespace Libs.CustomExtensions.Collections
 {
-    public static void AddRange<TKey, TValue>(
-        this IDictionary<TKey, TValue> target,
-        IEnumerable<TValue> source,
-        Func<TValue, TKey> key, Func<TValue, TValue> selector,
-        bool set = true)
+    public static class DictionaryExtensions
     {
-        source.ForEach(i =>
+        public static void AddRange<TKey, TValue>(
+            this IDictionary<TKey, TValue> target,
+            IEnumerable<TValue> source,
+            Func<TValue, TKey> key, Func<TValue, TValue> selector,
+            bool set = true)
         {
-            var dKey = key(i);
-            var dValue = selector(i);
-            if (set)
-                target[dKey] = dValue;
-            else
-                target.Add(key(i), selector(i));
-        });
-    }
+            source.ForEach(i =>
+            {
+                var dKey = key(i);
+                var dValue = selector(i);
+                if (set)
+                    target[dKey] = dValue;
+                else
+                    target.Add(key(i), selector(i));
+            });
+        }
 
-    private static IEnumerable<T> ForEach<T>(this IEnumerable<T> source, Action<T> action)
-    {
-        foreach (T obj in source)
-            action(obj);
-        return source;
+        private static IEnumerable<T> ForEach<T>(this IEnumerable<T> source, Action<T> action)
+        {
+            foreach (T obj in source)
+                action(obj);
+            return source;
+        }
     }
 }
 

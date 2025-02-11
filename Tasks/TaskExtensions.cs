@@ -1,14 +1,16 @@
+using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Libs.CustomExtensions.Tasks;
-
-public static class TaskExtensions
+namespace Libs.CustomExtensions.Tasks
 {
-    public static Task ProcessErrors(this Task task)
+    public static class TaskExtensions
     {
-        return task.ContinueWith(
-            t => Debug.LogException(t.Exception),
-            TaskContinuationOptions.OnlyOnFaulted
-        );
+        public static Task ProcessErrors(this Task task)
+        {
+            return task.ContinueWith(
+                t => Debug.LogException(t.Exception),
+                TaskContinuationOptions.OnlyOnFaulted
+            );
+        }
     }
 }
