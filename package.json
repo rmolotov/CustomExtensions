@@ -1,0 +1,13 @@
+{
+  "name": "com.rm.customextensions",
+  "displayName": "Custom Extensions",
+  "version": "1.0.0",
+  "description": "Custom code Extensions",
+  "dependencies": {
+    
+  },
+  "author": {
+    "name": "Roman Molotov",
+    "url": "r.molotov@yahoo.com"
+  }
+}
