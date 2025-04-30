@@ -1,5 +1,9 @@
 # CodeExtensions
 
+## Install
+1) Add git dependency UniRx from `https://github.com/neuecc/UniRx.git?path=Assets/Plugins/UniRx/Scripts`
+2) Add this package dependency as `https://github.com/rmolotov/BuildTools.git?path=/Packages/BuildTools`
+
 ## Contents
 1. For collections
 2. Functional extensions

@@ -1,11 +1,13 @@
 {
   "name": "com.rm.customextensions",
   "version": "1.0.2",
-  "displayName": "Custom code extensions",
+  "displayName": "Custom Extensions",
   "description": "Code extensions for Tasks, Rx, LINQ",
   "author": {
     "name": "Roman Molotov",
     "email": "r.molotov@yahoo.com"
   },
-  "type": "code"
+  "dependencies": {
+    "com.neuecc.unirx": "7.1.0"
+  }
 }
