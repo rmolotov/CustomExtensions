@@ -1,6 +1,6 @@
 {
   "name": "com.rm.customextensions",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "displayName": "Custom Extensions",
   "description": "Code extensions for Tasks, Rx, LINQ",
   "author": {
