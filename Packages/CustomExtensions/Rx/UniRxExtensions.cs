@@ -1,3 +1,5 @@
+#if USE_UNIRX
+
 using System;
 using UniRx;
 
@@ -23,3 +25,5 @@ namespace CustomExtensions.Rx
         }
     }
 }
+
+#endif
