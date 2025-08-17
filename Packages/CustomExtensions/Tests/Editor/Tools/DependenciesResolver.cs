@@ -10,13 +10,12 @@ namespace Tests.Editor.Tools
 {
     public partial class DependenciesResolver
     {
-        private static string _projectPath;
         private static string _generatedPath;
         private static string _packageDependenciesPath;
         private static string _projectName;
 
         private const string ShellExecutableName = "sh";
-        private const string PathToPackageDependencies = @"Packages\com.rm.customextensions\Tests\Dependencies";
+        private const string PathToPackageDependencies = "Packages/com.rm.customextensions/Tests/Dependencies";
         private const string GeneratedFolderName = "Generated";
         private const string ScriptFileName = "tests_get_dependencies_local.sh";
         
@@ -39,7 +38,7 @@ namespace Tests.Editor.Tools
             {
                 FileName = ShellExecutableName,
                 WorkingDirectory = _packageDependenciesPath,
-                Arguments = $@"-c ""{ShellExecutableName} {ScriptFileName}"" ",
+                Arguments = $@"-c ""{ShellExecutableName} {ScriptFileName} {_generatedPath}"" ",
                 RedirectStandardInput = true,
                 RedirectStandardOutput = true,
                 RedirectStandardError = true,
@@ -68,11 +67,10 @@ namespace Tests.Editor.Tools
                 .GetFileNameWithoutExtension(Directory
                     .GetFiles(Path.GetFullPath(PathToPackageDependencies), "*.csproj")
                     .First());
-            _projectPath = Path
-                .GetDirectoryName(Application.dataPath)!;
             _packageDependenciesPath = Path.GetFullPath(PathToPackageDependencies);
             _generatedPath = Path
-                .Combine(Application.dataPath, GeneratedFolderName);
+                .Combine(Application.dataPath, GeneratedFolderName)
+                .Replace('\\', Path.AltDirectorySeparatorChar);
         }
 
         private static void CleanUpGeneratedFiles()
