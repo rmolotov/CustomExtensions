@@ -16,7 +16,7 @@ namespace Tests.Editor.Tools
         private static string _projectName;
 
         private const string ShellExecutableName = "sh";
-        private const string PathToPackageDependencies = @"Packages\Custom Extensions\Tests\Dependencies";
+        private const string PathToPackageDependencies = @"Packages\com.rm.customextensions\Tests\Dependencies";
         private const string GeneratedFolderName = "Generated";
         private const string ScriptFileName = "tests_get_dependencies_local.sh";
         
@@ -66,12 +66,11 @@ namespace Tests.Editor.Tools
         {
             _projectName = Path
                 .GetFileNameWithoutExtension(Directory
-                    .GetFiles(PathToPackageDependencies, "*.csproj")
+                    .GetFiles(Path.GetFullPath(PathToPackageDependencies), "*.csproj")
                     .First());
             _projectPath = Path
                 .GetDirectoryName(Application.dataPath)!;
-            _packageDependenciesPath = Path
-                .Combine(_projectPath, PathToPackageDependencies);
+            _packageDependenciesPath = Path.GetFullPath(PathToPackageDependencies);
             _generatedPath = Path
                 .Combine(Application.dataPath, GeneratedFolderName);
         }
