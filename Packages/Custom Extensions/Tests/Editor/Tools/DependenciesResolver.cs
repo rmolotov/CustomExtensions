@@ -16,7 +16,7 @@ namespace Tests.Editor.Tools
         private static string _projectName;
 
         private const string ShellExecutableName = "sh";
-        private const string PathToPackageDependencies = @"Packages\CustomExtensions\Tests\Dependencies";
+        private const string PathToPackageDependencies = @"Packages\Custom Extensions\Tests\Dependencies";
         private const string GeneratedFolderName = "Generated";
         private const string ScriptFileName = "tests_get_dependencies_local.sh";
         

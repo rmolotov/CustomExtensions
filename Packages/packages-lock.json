@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.rm.customextensions": {
-      "version": "file:CustomExtensions",
+      "version": "file:Custom Extensions",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}
